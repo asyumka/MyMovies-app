@@ -25,12 +25,14 @@ function InputSearchMovies() {
 
   return (
     <div className={classes.drop}>
-      <input
-        onChange={(e) => setSearchTerm(e.target.value)}
-        onFocus={() => setIsActive(true)}
-      />
-      {results && (
-        <OutsideArea setIsActive={setIsActive}>
+      <OutsideArea setIsActive={setIsActive}>
+        <input
+          type="search"
+          placeholder="Enter movie name..."
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onFocus={() => setIsActive(true)}
+        />
+        {results && (
           <div
             className={`${classes["dropped-block"]} ${
               isActive ? classes["active"] : ""
@@ -44,6 +46,7 @@ function InputSearchMovies() {
                       to={`/movies/${item.id}`}
                       className={isActive ? classes["active"] : undefined}
                       end
+                      onClick={() => setIsActive(false)}
                     >
                       {item.title}
                     </NavLink>
@@ -51,11 +54,11 @@ function InputSearchMovies() {
                 ))}
               </ul>
             ) : (
-              <p>Dont found anything</p>
+              <p>Nothing found</p>
             )}
           </div>
-        </OutsideArea>
-      )}
+        )}
+      </OutsideArea>
     </div>
   );
 }

@@ -6,10 +6,26 @@
   /* gap: 20px; */
 }
 
+input {
+  width: 100%; /* Make inputs take the full width of their container */
+  padding: 8px 16px; /* Add space inside the input */
+  display: inline-block; /* Align display behavior */
+  border: 3px solid #000000;
+  border-radius: 12px; /* Add rounded corners */
+  box-sizing: border-box;
+  outline: none;
+
+  font-family: inherit;
+}
+
+input:focus {
+  outline: var(--blue);
+}
+
 .dropped-block {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 110%;
   right: 0;
   background-color: var(--blue);
   padding: 20px;
