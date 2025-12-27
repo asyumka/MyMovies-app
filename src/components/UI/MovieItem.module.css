@@ -1,0 +1,74 @@
+.movie-card {
+  font-size: 20px;
+  border-bottom: 5px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card p,
+.movie-card ul {
+  font-size: 24px;
+}
+
+.movie-card + .movie-card {
+  margin-top: 100px;
+}
+
+.movie-card h3 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.movie-card-content {
+  display: flex;
+  gap: 30px;
+}
+
+.movie-card-img {
+  width: 500px;
+  overflow: hidden;
+}
+
+.movie-card-img img {
+  width: 100%;
+}
+
+.movie-card-img img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.movie-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  /* height: 100%; */
+}
+
+.movie-card-text ul {
+  display: flex;
+}
+
+.movie-card-description {
+  margin-top: auto;
+  /* margin-bottom: 40px; */
+}
+
+.btns-group {
+  margin: 30px 0 20px auto;
+}
+
+.btns-group > * + * {
+  margin-left: 15px;
+}
+
+a:-webkit-any-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:-webkit-any-link:hover {
+  color: var(--blue);
+  transition: all 0.3s ease-in-out;
+}

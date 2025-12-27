@@ -1,0 +1,18 @@
+.commentText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.clamped {
+  -webkit-line-clamp: 5;
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  color: var(--blue);
+  cursor: pointer;
+  padding: 0;
+}

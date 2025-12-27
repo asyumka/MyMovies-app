@@ -1,0 +1,40 @@
+.btn {
+  font-size: inherit;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: var(--blue);
+  cursor: pointer;
+  border: 2px solid var(--blue);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.15);
+  border: 2px solid black;
+}
+
+.btn.transperent {
+  background-color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn.transperent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: black;
+
+  transition: width 0.3s ease-in-out;
+}
+
+.btn.transperent:hover {
+  transform: none;
+}
+
+.btn.transperent:hover::after {
+  width: 100%;
+}

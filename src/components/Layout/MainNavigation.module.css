@@ -1,0 +1,77 @@
+.header {
+  font-size: 18px;
+  position: absolute;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(74, 78, 78);
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.header nav {
+  width: 1400px;
+  display: flex;
+  align-items: center;
+  padding: 10px 150px;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+}
+
+.list a {
+  text-decoration: none;
+}
+
+.list a:hover,
+.list a.active {
+  color: var(--blue);
+}
+
+.logo {
+  width: 50px;
+  margin-right: 50px;
+}
+
+/* .list a {
+  display: inline-block;
+  vertical-align: middle;
+} */
+
+.dropdown-item-wrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.dropdown-item-wrap > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-favorites__btn {
+  margin-left: auto;
+  /* height: min-content; */
+}
+
+.btn-submit {
+  margin-left: 10px;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: var(--blue);
+}

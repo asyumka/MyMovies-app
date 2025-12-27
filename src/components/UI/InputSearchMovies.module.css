@@ -1,0 +1,27 @@
+.drop {
+  position: relative;
+  display: flex;
+  font-size: 18px;
+  margin: 0 auto;
+  /* gap: 20px; */
+}
+
+.dropped-block {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--blue);
+  padding: 20px;
+  border-radius: 12px;
+  width: max-content;
+}
+
+.dropped-block.active {
+  display: block;
+  z-index: 100;
+}
+
+.dropped-list-item a:hover {
+  color: black !important;
+}

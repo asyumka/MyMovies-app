@@ -1,0 +1,21 @@
+.title-logo {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1024px;
+  height: 206px;
+  animation: logoAnimation 3s infinite ease-in-out;
+}
+
+@keyframes logoAnimation {
+  0% {
+    background-image: url("./assets/Title.png");
+  }
+  50% {
+    background-image: url("./assets/Title-bright.png");
+  }
+  100% {
+    background-image: url("./assets/Title.png");
+  }
+}

@@ -1,0 +1,139 @@
+.player-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background-color: black;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.player-wrapper > .react-player {
+  position: absolute;
+
+  top: 64%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.53);
+}
+
+/* .react-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(1.55);
+} */
+
+.click-area {
+  height: 100%;
+}
+
+/* Слой поверх видео */
+.controls-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.controls-bar,
+.center-toggle-btn {
+  pointer-events: auto;
+}
+
+/* Скрываем интерфейс, когда мышь не наведена (опционально) */
+.player-wrapper:hover .controls-overlay {
+  opacity: 1;
+}
+
+.center-toggle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+
+  background-color: rgba(0, 0, 0, 1.3);
+  padding: 20px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease-in-out;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.center-toggle-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Стили для иконок внутри */
+.center-toggle-btn img {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+/* Специфичные стили для Play */
+.icon-play {
+  margin-left: 5px;
+}
+
+/* Специфичные стили для Pause */
+.center-toggle-btn:has(.icon-pause) {
+  transition: opacity 0.5s;
+  opacity: 0;
+  cursor: initial;
+}
+
+/* Нижняя панель */
+.controls-bar {
+  display: flex;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 10px 20px;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.player-wrapper:hover .controls-bar {
+  display: flex;
+}
+
+.btn-control {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Стилизация ползунка (input range) */
+.seek-slider {
+  flex-grow: 1;
+  cursor: pointer;
+  height: 5px;
+}
+
+.fall-text {
+  font-size: 28px;
+  text-align: center;
+}
+
+.cover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
