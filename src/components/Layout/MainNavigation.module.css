@@ -11,10 +11,11 @@
 }
 
 .header nav {
-  width: 1400px;
+  flex: 1;
+  max-width: 1100px;
   display: flex;
   align-items: center;
-  padding: 10px 150px;
+  padding: 10px clamp(0.625rem, -9.375rem + 20.83vw, 6.25rem);
 }
 
 .list {

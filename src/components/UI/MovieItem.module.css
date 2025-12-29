@@ -72,3 +72,24 @@ a:-webkit-any-link:hover {
   color: var(--blue);
   transition: all 0.3s ease-in-out;
 }
+
+@media (max-width: 1200px) {
+  .movie-card h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .movie-card p,
+  .movie-card ul {
+    font-size: 18px;
+  }
+
+  .movie-card-content > * {
+    flex: 1;
+  }
+
+  .movie-card-img {
+    width: inherit;
+    max-width: 500px;
+  }
+}

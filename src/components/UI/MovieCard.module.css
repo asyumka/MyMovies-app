@@ -9,7 +9,7 @@
 
 .wrapper-content {
   padding: 35px;
-  max-width: 1400px;
+  max-width: 1130px;
   background-color: rgb(74, 78, 78);
 }
 
@@ -62,4 +62,16 @@
 .fall-text {
   font-size: 28px;
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .movie-card h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .movie-card p,
+  .movie-card ul {
+    font-size: 20px;
+  }
 }
