@@ -11,6 +11,11 @@ function InputSearchMovies() {
   const [results, setResults] = useState([]);
   const [isActive, setIsActive] = useState(false);
 
+  function clearInput() {
+    searchTerm("");
+    setIsActive(false);
+  }
+
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       if (searchTerm) {
@@ -46,7 +51,7 @@ function InputSearchMovies() {
                       to={`/movies/${item.id}`}
                       className={isActive ? classes["active"] : undefined}
                       end
-                      onClick={() => setIsActive(false)}
+                      onClick={clearInput}
                     >
                       {item.title}
                     </NavLink>
