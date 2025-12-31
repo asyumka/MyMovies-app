@@ -1,7 +1,7 @@
 .drop {
   position: relative;
   display: flex;
-  font-size: 18px;
+  /* font-size: 18px; */
   /* margin-left: auto; */
   /* gap: 20px; */
   margin-right: 25px;
@@ -37,7 +37,7 @@
 .dropped-block {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 140%;
   right: 0;
   background-color: var(--blue);
   padding: 20px;
@@ -57,4 +57,10 @@
 
 .dropped-list-item a:hover {
   color: black !important;
+}
+
+@media (max-width: 992px) {
+  .drop {
+    margin-right: 15px;
+  }
 }

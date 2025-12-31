@@ -11,6 +11,7 @@
 }
 
 .header nav {
+  min-height: 55px;
   flex: 1;
   max-width: 1100px;
   display: flex;
@@ -75,4 +76,42 @@
 
 .btn-submit:hover {
   background-color: var(--blue);
+}
+
+@media (max-width: 1200px) {
+  .header,
+  .header a {
+    font-size: 16px;
+  }
+
+  .list {
+    gap: 10px;
+  }
+
+  .logo {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header,
+  .header a {
+    font-size: 14px;
+  }
+
+  .header nav {
+    padding: 10px 35px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .btn-submit {
+    margin-left: 0px;
+  }
+
+  .list {
+    gap: clamp(0.625rem, -0.446rem + 2.23vw, 0.938rem);
+  }
 }

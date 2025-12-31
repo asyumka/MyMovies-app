@@ -31,6 +31,7 @@ ul {
 
 h1 {
   font-size: 48px;
+  line-height: 1;
 }
 
 h2 {
@@ -87,4 +88,14 @@ button {
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .bg-img {
+    padding: 200px 50px;
+  }
+
+  .wrapper {
+    padding: 30px 20px;
+  }
 }

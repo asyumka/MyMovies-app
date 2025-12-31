@@ -74,6 +74,9 @@ a:-webkit-any-link:hover {
 }
 
 @media (max-width: 1200px) {
+  .movie-card {
+    font-size: 18px;
+  }
   .movie-card h3 {
     font-size: 32px;
     margin-bottom: 10px;
@@ -91,5 +94,25 @@ a:-webkit-any-link:hover {
   .movie-card-img {
     width: inherit;
     max-width: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .movie-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .movie-card p,
+  .movie-card ul {
+    font-size: 15px;
+  }
+
+  .movie-card-text {
+    gap: 10px;
+  }
+
+  .movie-card-content > a {
+    flex: 0.8;
   }
 }
