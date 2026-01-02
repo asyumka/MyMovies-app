@@ -99,3 +99,19 @@ button {
     padding: 30px 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .bg-img {
+    padding: 200px 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bg-img {
+    padding: 0;
+    background: #242424;
+  }
+  .wrapper {
+    margin: 75px 0;
+  }
+}

@@ -4,6 +4,7 @@ import { movieGenresToName } from "../../utils/genresUtils";
 import { stylingList } from "../../utils/listUtils";
 import Button from "./Button";
 import LikeButton from "./LikeButton";
+import SlicedText from "./SlicedText";
 
 function MovieItem({ movieData }) {
   const user = useRouteLoaderData("root")?.user;
@@ -44,10 +45,11 @@ function MovieItem({ movieData }) {
             <b>Rating: </b>
             {movieData.vote_average}
           </p>
-
-          <p className={classes["movie-card-description"]}>
-            {movieData.overview}
-          </p>
+          <div className={classes["movie-card-description"]}>
+            <SlicedText contentLength={movieData.overview.length}>
+              <p>{movieData.overview}</p>
+            </SlicedText>
+          </div>
         </div>
       </div>
       <div className={classes["btns-group"]}>

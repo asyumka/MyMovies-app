@@ -64,3 +64,14 @@
     margin-right: 15px;
   }
 }
+
+@media (max-width: 768px) {
+  .drop {
+    margin: 0 15px;
+  }
+
+  .dropped-block {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

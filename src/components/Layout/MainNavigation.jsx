@@ -2,21 +2,29 @@ import { Link, NavLink, Form, useRouteLoaderData } from "react-router";
 
 import classes from "./MainNavigation.module.css";
 import logoImg from "../../assets/svg/logo.svg";
+import burgerMenuBtn from "../../assets/svg/burger-menu-svgrepo-com.svg";
+import closeBtn from "../../assets/svg/arrow-up-svgrepo-com.svg";
 import DropDown from "../UI/DropDown";
 import { GENRES_ARRAY } from "../../utils/genresUtils";
 import { useFavorites } from "../../context/FavoritesContext";
 import LikeButton from "../UI/LikeButton";
 import InputSearchMovies from "../UI/InputSearchMovies";
+import { useState } from "react";
 
 function MainNavigation() {
+  const [navIsClosed, setNavIsClosed] = useState(true);
   const rootData = useRouteLoaderData("root");
   const { favorites } = useFavorites();
+
+  function toggleNav() {
+    setNavIsClosed((prev) => !prev);
+  }
 
   const user = rootData?.user;
 
   return (
     <header className={classes.header}>
-      <nav>
+      <nav className={navIsClosed ? classes.active : undefined}>
         <Link to="/">
           <img src={logoImg} alt="logo" className={classes.logo} />
         </Link>
@@ -33,56 +41,62 @@ function MainNavigation() {
               Home
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/popular"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-              end
-            >
-              Popular
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/upcoming"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-              end
-            >
-              Upcoming
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/now_playing"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-              end
-            >
-              Now Playing
-            </NavLink>
-          </li>
-        </ul>
-        <InputSearchMovies />
-        <DropDown
-          title="Genres"
-          list={GENRES_ARRAY}
-          renderItem={(genre) => (
-            <NavLink
-              to={`/genres/${genre.name.toLowerCase()}?id=${genre.id}`}
-              className={({ isActive }) =>
-                isActive ? classes["active"] : undefined
-              }
-              end
-            >
-              {genre.name}
-            </NavLink>
+          {navIsClosed && (
+            <>
+              <li>
+                <NavLink
+                  to="/popular"
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                  end
+                >
+                  Popular
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/upcoming"
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                  end
+                >
+                  Upcoming
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/now_playing"
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                  end
+                >
+                  Now Playing
+                </NavLink>
+              </li>
+            </>
           )}
-        />
+        </ul>
+        {navIsClosed && <InputSearchMovies />}
+        {navIsClosed && (
+          <DropDown
+            title="Genres"
+            list={GENRES_ARRAY}
+            renderItem={(genre) => (
+              <NavLink
+                to={`/genres/${genre.name.toLowerCase()}?id=${genre.id}`}
+                className={({ isActive }) =>
+                  isActive ? classes["active"] : undefined
+                }
+                end
+              >
+                {genre.name}
+              </NavLink>
+            )}
+          />
+        )}
 
         {user && (
           <DropDown
@@ -128,6 +142,22 @@ function MainNavigation() {
             </div>
           </Form>
         )}
+
+        <button className={classes["burger-btn"]} onClick={toggleNav}>
+          {!navIsClosed ? (
+            <img
+              src={burgerMenuBtn}
+              alt="burger Menu Button"
+              className={classes.icon}
+            />
+          ) : (
+            <img
+              src={closeBtn}
+              alt="close Menu Button"
+              className={classes.icon}
+            />
+          )}
+        </button>
       </nav>
     </header>
   );

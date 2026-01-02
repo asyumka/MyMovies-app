@@ -24,3 +24,9 @@
     background-image: url("./assets/Title.png");
   }
 }
+
+@media (max-width: 768px) {
+  .title-logo {
+    display: none;
+  }
+}

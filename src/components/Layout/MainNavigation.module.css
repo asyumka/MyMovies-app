@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   padding: 10px clamp(0.625rem, -9.375rem + 20.83vw, 6.25rem);
+  position: relative;
 }
 
 .list {
@@ -78,6 +79,16 @@
   background-color: var(--blue);
 }
 
+.burger-btn {
+  display: none;
+  line-height: 0;
+}
+
+.icon {
+  width: 30px;
+  height: auto;
+}
+
 @media (max-width: 1200px) {
   .header,
   .header a {
@@ -113,5 +124,34 @@
 
   .list {
     gap: clamp(0.625rem, -0.446rem + 2.23vw, 0.938rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .burger-btn {
+    display: block;
+    margin-left: auto;
+  }
+
+  nav.active {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  nav.active .burger-btn {
+    margin-left: 0;
+  }
+
+  nav .list {
+    margin-right: auto;
+  }
+
+  nav.active .list {
+    margin-right: 0;
+  }
+
+  .header,
+  .header a {
+    font-size: 18px;
   }
 }

@@ -1,6 +1,6 @@
 .bg-img {
   margin-top: 76px;
-  padding: 250px 0 100px 0;
+  padding: 250px 50px 100px 50px;
   min-height: calc(100vh - 76px);
   background: #242424 no-repeat center center / cover fixed;
   display: flex;
@@ -8,6 +8,7 @@
 }
 
 .wrapper-content {
+  width: calc(100% - 70px);
   padding: 35px;
   max-width: 1130px;
   background-color: rgb(74, 78, 78);
@@ -76,5 +77,30 @@
   .movie-card p,
   .movie-card ul {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bg-img {
+    padding: 250px 25px 100px 25px;
+  }
+  .movie-card p,
+  .movie-card ul {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-img {
+    padding: 0px;
+  }
+
+  .movie-card-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .movie-card-img {
+    max-width: 75%;
+    margin: 0 auto;
   }
 }
